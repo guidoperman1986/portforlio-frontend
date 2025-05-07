@@ -4,19 +4,7 @@
         <app-aside class="flex-shrink-0"></app-aside>
 
         <section class="flex flex-col h-3/4 px-4 pg-5 my-20 bg-neutral-900 my-20 rounded-lg w-3/4 relative">
-            <header class="flex justify-between">
-                <h1 class="text-white text-3xl font-bold mb-3">Title</h1>
-                <nav
-                    class="absolute top-0 right-0 px-10 py-4 bg-neutral-700 rounded-bl-2xl border-b border-l border-neutral-600">
-                    <ul class="flex gap-10">
-                        <span routerLink="about" class="text-neutral-400 font-semibold text capitalize cursor-pointer">About</span>
-                        <span routerLink="/resume" class="text-neutral-400 font-semibold text capitalize cursor-pointer">Resume</span>
-                        <span routerLink="/portfolio" class="text-neutral-400 font-semibold text capitalize cursor-pointer">Portfolio</span>
-                        <span routerLink="/blog" class="text-neutral-400 font-semibold text capitalize cursor-pointer">Blog</span>
-                        <span routerLink="/contact" class="text-neutral-400 font-semibold text capitalize cursor-pointer">Contact</span>
-                    </ul>
-                </nav>
-            </header>
+            <app-navbar></app-navbar>
 
             <div>
                 <router-outlet></router-outlet>
