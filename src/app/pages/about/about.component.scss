@@ -1,0 +1,3 @@
+.gradient-box {
+    @apply bg-gradient-to-br from-[hsla(240, 1%, 18%, 0.251)] to-[hsla(240, 2%, 11%, 0)] bg-hsl(240, 2%, 13%) h-40 w-[calc(50%-10px)] flex items-center justify-center text-white font-semibold rounded-md border border-white;
+}
