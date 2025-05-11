@@ -1,0 +1,11 @@
+<!-- Custom scrollbar -->
+<div 
+    class="relative mt-4 mx-auto h-2 w-[calc(50%-10px)] bg-gray-700 rounded-full cursor-pointer"
+    (mousedown)="startDrag($event)"
+>
+    <div 
+        class="absolute h-2 bg-yellow-200 rounded-full" 
+        [style.width.%]="scrollBarWidth()"
+        [style.left.%]="scrollBarLeft()"
+    ></div>
+</div>
