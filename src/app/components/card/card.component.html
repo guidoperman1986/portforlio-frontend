@@ -1,1 +1,23 @@
+<!-- check if is possible to give custom height -->
+<!-- reformat to add just icons -->
 
+<div
+    [style.width]="width()"
+    [style.height]="height()"
+    [style.background]="bg()"
+    class="flex flex-col rounded-xl p-6 min-w-[22rem]"
+>
+    <div class="flex items-center mb-3">
+        <div class="bg-gray-700 rounded-lg p-3 mr-4 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-400" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+        </div>
+        <span class="text-white font-bold text-lg">Fast Learner</span>
+    </div>
+    <p class="text-gray-300 text-sm">
+        I have the ability to quickly acquire new knowledge and adapt to
+        changing...
+    </p>
+</div>
