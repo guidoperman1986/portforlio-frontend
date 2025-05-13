@@ -1,0 +1,49 @@
+<!-- TODO: manage urls from backend -->
+
+<ng-container>
+    <h2 class="text-white text-3xl font-bold mb-8">Tech Experience</h2>
+    <div #scrollContainer class="flex flex-row gap-8 w-full overflow-x-auto pb-4 flex-nowrap hide-scrollbar">
+        <app-card 
+            [width]="width" 
+            [height]="height" 
+            [bg]="bg" 
+            cardType="icon" 
+            minWidth="12rem"
+            imgUrl="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg"
+        ></app-card>
+        <app-card 
+            [width]="width" 
+            [height]="height" 
+            [bg]="bg" 
+            cardType="icon" 
+            minWidth="12rem"
+            imgUrl="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angular/angular-original.svg"
+        ></app-card>
+        <app-card 
+            [width]="width" 
+            [height]="height" 
+            [bg]="bg" 
+            cardType="icon" 
+            minWidth="12rem"
+            imgUrl="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+        ></app-card>
+        <app-card 
+            [width]="width" 
+            [height]="height" 
+            [bg]="bg" 
+            cardType="icon" 
+            minWidth="12rem"
+            imgUrl="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ngrx/ngrx-original.svg"
+        ></app-card>
+        <app-card 
+            [width]="width" 
+            [height]="height" 
+            [bg]="bg" 
+            cardType="icon" 
+            minWidth="12rem"
+            imgUrl="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg"
+        ></app-card>
+    </div>
+
+    <app-custom-scrollbar [scrollContainer]="scrollContainer"></app-custom-scrollbar>
+</ng-container>

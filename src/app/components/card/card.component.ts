@@ -7,7 +7,10 @@ import { Component, input } from '@angular/core';
   styleUrl: './card.component.scss'
 })
 export class CardComponent {
-  width  = input.required();
-  height = input.required();
-  bg     = input.required();
+  width    = input.required();
+  height   = input.required();
+  bg       = input.required();
+  minWidth = input('22rem');
+  cardType = input<'normal' | 'icon'>('normal')
+  imgUrl   = input('')
 }
