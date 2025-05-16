@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { InfoComponent } from "../info/info.component";
+import { profileStore } from '../../stores/profile.store';
 
 @Component({
   selector: 'app-aside',
@@ -7,6 +8,10 @@ import { InfoComponent } from "../info/info.component";
   templateUrl: './aside.component.html',
   styleUrl: './aside.component.scss'
 })
-export class AsideComponent {
+export class AsideComponent implements OnInit {
+  profileStore = inject(profileStore);  
 
+  ngOnInit() {
+    this.profileStore.loadProfile();
+  }
 }
