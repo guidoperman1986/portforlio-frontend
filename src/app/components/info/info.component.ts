@@ -9,4 +9,5 @@ import { Component, input } from '@angular/core';
 export class InfoComponent {
   label = input.required<string>();
   value = input.required<string>();
+  icon  = input.required<string>();
 }
