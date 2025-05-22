@@ -16,11 +16,10 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
             </div>
-            <span class="text-white font-bold text-lg">Fast Learner</span>
+            <span class="text-white font-bold text-lg">{{ title() }}</span>
         </div>
         <p class="text-gray-300 text-sm">
-            I have the ability to quickly acquire new knowledge and adapt to
-            changing...
+            {{ content() }}
         </p>
     } @else if  (cardType() === 'icon') {
         <div class="flex items-center justify-center h-full">

@@ -7,6 +7,8 @@ import { Component, input } from '@angular/core';
   styleUrl: './card.component.scss'
 })
 export class CardComponent {
+  title    = input<string>();
+  content  = input<string>();
   width    = input.required();
   height   = input.required();
   bg       = input.required();

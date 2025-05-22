@@ -1,12 +1,17 @@
-<!-- Soft Skills Section -->
+@let softSkills = softSillsStore.getValue().softSkills;
+
 <ng-container>
     <h2 class="text-white text-2xl font-bold mb-8">Soft Skills</h2>
     <div #scrollContainer class="flex flex-row gap-8 w-full overflow-x-auto pb-4 flex-nowrap hide-scrollbar">
-        <app-card [width]="width" [height]="height" [bg]="bg"></app-card>
-        <app-card [width]="width" [height]="height" [bg]="bg"></app-card>
-        <app-card [width]="width" [height]="height" [bg]="bg"></app-card>
-        <app-card [width]="width" [height]="height" [bg]="bg"></app-card>
-        <app-card [width]="width" [height]="height" [bg]="bg"></app-card>
+        @for (softSkill of softSkills(); track softSkill.id) {
+            <app-card 
+                [width]="width" 
+                [height]="height" 
+                [bg]="bg"
+                [title]="softSkill.name"
+                [content]="softSkill.content"
+            ></app-card>
+        }
     </div>
 
     <app-custom-scrollbar [scrollContainer]="scrollContainer"></app-custom-scrollbar>
