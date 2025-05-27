@@ -1,5 +1,16 @@
-<div class="flex flex-col mt-5 p-5">
+@let education = store.education().data;
+@let experience = store.experience().data;
+
+<div class="flex flex-col mt-5 p-5 space-y-12">
+    @if (education) {
+        <app-timeline-items 
+            [timelineDetails]="{timelineTitle: 'Education', items: education}"
+        ></app-timeline-items>
+    }
     
-
-
+    @if (experience) {
+        <app-timeline-items 
+            [timelineDetails]="{timelineTitle: 'Experience', items: experience}"
+        ></app-timeline-items>
+    }
 </div>

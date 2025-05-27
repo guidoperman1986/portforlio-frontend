@@ -1,0 +1,60 @@
+.timeline {
+    --line-color: #FDC965;
+    --bullet-size: 14px;
+    --bullet-border: 2px;
+    --timeline-offset: 25px;
+
+    position: relative;
+    padding-left: 30px; // Space for the line
+    height: auto;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 10px;
+        top: 0;
+        bottom: 0;
+        width: 1px;
+        background: var(--line-color); 
+    }
+
+    &.last-item {
+        &::before {
+            display: none;
+        }
+    }
+
+    .timeline-item {
+        position: relative;
+        margin-bottom: 30px;
+        padding-left: 30px; // Space between bullet and content
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .timeline-bullet {
+        position: absolute;
+        left: -27px;
+        top: 2px;
+        width: var(--bullet-size);
+        height: var(--bullet-size);
+        border-radius: 50%;
+        background: var(--line-color);
+        border: var(--bullet-border) solid #383838; // Creates the white border around the bullet
+        box-shadow: 0 0 0 var(--bullet-border) var(--line-color); // Creates the colored border
+        z-index: 1;
+    }
+
+    .timeline-content {
+        background: transparent;
+        /* padding: 15px;
+      border-radius: 4px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); */
+    }
+
+    .text-onyx {
+        color: var(--line-color);
+    }
+}

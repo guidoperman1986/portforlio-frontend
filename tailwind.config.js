@@ -12,11 +12,14 @@ module.exports = {
             },
             backgroundImage: {
                 "gradient-onyx":
-                "linear-gradient(to bottom right, hsl(240,1%,25%) 3%, hsl(0,0%,19%) 97%)",
+                    "linear-gradient(to bottom right, hsl(240,1%,25%) 3%, hsl(0,0%,19%) 97%)",
             },
             textColor: {
                 "onyx": "#FECE66"
-            }
+            },
+            borderColor: {
+                "custom-gray": "hsl(0, 0%, 22%)",
+            },
         },
     },
     plugins: [],
