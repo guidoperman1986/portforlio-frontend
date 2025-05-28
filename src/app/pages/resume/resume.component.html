@@ -1,5 +1,8 @@
 @let education = store.education().data;
 @let experience = store.experience().data;
+@let languages = store.language().data;
+@let skill = store.skill().data;
+
 
 <div class="flex flex-col mt-5 p-5 space-y-12">
     @if (education) {
@@ -13,4 +16,25 @@
             [timelineDetails]="{timelineTitle: 'Experience', items: experience}"
         ></app-timeline-items>
     }
+
+    @if (languages) {
+        <app-percentage-card 
+            title="Languages" 
+            width="auto" 
+            height="auto" 
+            bg='linear-gradient(to bottom right, hsl(240,1%,20%) 3%, hsl(0,0%,15%) 97%)'
+            [percentageItems]="languages"
+        ></app-percentage-card> 
+    }
+
+    @if (skill) {
+
+        <app-percentage-card 
+            title="Skills" 
+            width="auto" 
+            height="auto" 
+            bg='linear-gradient(to bottom right, hsl(240,1%,20%) 3%, hsl(0,0%,15%) 97%)'
+            [percentageItems]="skill"
+        ></app-percentage-card> 
+    }   
 </div>

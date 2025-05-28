@@ -1,7 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { inject, Injectable } from "@angular/core";
 import { environment } from "../../environments/environment.development";
-import { TimelineItem } from "../interfaces/resume.interface";
+import { PercentageItem, TimelineItem } from "../interfaces/resume.interface";
 
 @Injectable({
     providedIn: 'root'
@@ -23,10 +23,10 @@ export class ResumeService {
     }
 
     getLanguage() {
-        return this.http.get<{ content: string }>(this.baseUrl + '/language');
+        return this.http.get<PercentageItem[]>(this.baseUrl + '/language');
     }
 
     getSkill() {
-        return this.http.get<{ content: string }>(this.baseUrl + '/skill');
+        return this.http.get<PercentageItem[]>(this.baseUrl + '/skill');
     }
 }

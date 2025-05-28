@@ -1,7 +1,7 @@
 import { inject } from "@angular/core";
 import { patchState, signalStore, withMethods, withState } from "@ngrx/signals";
 import { firstValueFrom } from "rxjs";
-import { Education, Experience, Resume, ResumeState } from "../interfaces/resume.interface";
+import { Education, Experience, PercentageItem, Resume, ResumeState } from "../interfaces/resume.interface";
 import { ResumeService } from "../services/resume.service";
 
 const initialState: ResumeState = {
@@ -16,6 +16,16 @@ const initialState: ResumeState = {
         error: null
     },
     experience: {
+        data: null,
+        isLoading: false,
+        error: null
+    },
+    language: {
+        data: null,
+        isLoading: false,
+        error: null
+    },
+    skill: {
         data: null,
         isLoading: false,
         error: null
@@ -44,6 +54,19 @@ export const resumeStore = signalStore(
 
             patchState(store, { experience: { data: experience, isLoading: false, error: null } });
         },
+        async loadLanguage() {
+            patchState(store, { language: { data: null, isLoading: true, error: null } });
+            const language: PercentageItem[] = await firstValueFrom(resumeService.getLanguage());
+
+            patchState(store, { language: { data: language, isLoading: false, error: null } });
+        },
+        async loadSkill() {
+            patchState(store, { skill: { data: null, isLoading: true, error: null } });
+            const skill: PercentageItem[] = await firstValueFrom(resumeService.getSkill());
+
+            patchState(store, { skill: { data: skill, isLoading: false, error: null } });
+        },
+
         getValue() {
             return { resume: store.resume.data, isLoading: store.resume.isLoading, error: store.resume.error };
         },
@@ -53,18 +76,11 @@ export const resumeStore = signalStore(
         getExperience() {
             return { experience: store.experience.data, isLoading: store.experience.isLoading, error: store.experience.error };
         },
-        /*
-        async loadLanguage() {
-            patchState(store, { isLoading: true });
-            const language: Resume = await firstValueFrom(resumeService.getLanguage());
-
-            patchState(store, { resume: language, isLoading: false });
+        getLanguages() {
+            return { language: store.language.data, isLoading: store.language.isLoading, error: store.language.error };
         },
-        async loadSkill() {
-            patchState(store, { isLoading: true });
-            const skill: Resume = await firstValueFrom(resumeService.getSkill());
-
-            patchState(store, { resume: skill, isLoading: false });
-        }, */
+        getSkills() {
+            return { skill: store.skill.data, isLoading: store.skill.isLoading, error: store.skill.error };
+        },
     }))
 )

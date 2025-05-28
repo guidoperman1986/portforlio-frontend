@@ -1,0 +1,26 @@
+<h1 class="text-white text-2xl font-bold mb-5">{{title()}}</h1>
+<div 
+    [style.width]="width()" 
+    [style.height]="height()" 
+    [style.background]="bg()" 
+    [style.min-width]="minWidth()"
+    class="flex flex-col rounded-xl min-w-[22rem]"
+>
+<div class="w-full h-full p-8">
+    <div class="space-y-6">
+        @for (item of percentageItems(); track item.name) {
+            <div>
+                <div class="flex items-center mb-1 gap-3">
+                    <span class="text-white text-1xl font-bold">{{ item.name }}</span>
+                    <span class="text-onyx text-sm text-gray-300">{{ item.level }}%</span>
+                </div>
+                <div class="w-full bg-gray-700 rounded-full h-1.5">
+                    <div class="bg-onyx h-1.5 rounded-full" [style.width.%]="item.level"></div>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+
+
+</div>

@@ -1,21 +1,23 @@
-import { Component, input } from '@angular/core';
+import { Component, input, OnInit } from '@angular/core';
 import { PercentageItem } from '../../interfaces/resume.interface';
 
 @Component({
-  selector: 'app-card',
+  selector: 'app-percentage-card',
   imports: [],
-  templateUrl: './card.component.html',
-  styleUrl: './card.component.scss'
+  templateUrl: './percentage-card.component.html',
+  styleUrl: './percentage-card.component.scss'
 })
-export class CardComponent {
+export class PercentageCardComponent implements OnInit {
   title    = input<string>();
   content  = input<string>();
   width    = input.required();
   height   = input.required();
   bg       = input.required();
   minWidth = input('22rem');
-  cardType = input<'normal' | 'icon' | 'percentage'>('normal')
-  imgUrl   = input('')
 
   percentageItems = input<PercentageItem[]>();
+
+  ngOnInit(): void {
+    console.log(this.percentageItems());
+  }
 }

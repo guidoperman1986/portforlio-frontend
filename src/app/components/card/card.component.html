@@ -31,5 +31,23 @@
                 class="grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer"
             />
         </div>
-    }
+    } <!-- @else if (cardType() === 'percentage') {
+        <div class="w-full h-full">
+            <h1 class="text-white text-2xl font-bold mb-5">{{title()}}</h1>
+        </div>
+        
+        
+        
+        
+        <div class="flex items-center justify-center h-full">
+            <div class="flex items-center justify-center">
+                <span class="text-white font-bold text-lg">{{ title() }}</span>
+            </div>
+            <div class="w-full h-2 bg-gray-700 rounded-full">
+                @for (percentageItem of percentageItems(); track percentageItem.name) {
+                     <div class="h-2 bg-yellow-200 rounded-full" [style.width.%]="percentageItem.level"></div>
+                }
+            </div>
+        </div>
+    } -->
 </div>

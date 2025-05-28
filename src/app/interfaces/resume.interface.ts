@@ -6,6 +6,12 @@ export interface TimelineItem {
     end?: number;
 }
 
+export interface PercentageItem {
+    name: string;
+    level: number;
+    active: boolean;
+}
+
 export interface Resume {
     content: string;
 }
@@ -26,6 +32,16 @@ export interface ResumeState {
     }
     experience: {
         data: Experience | null;
+        isLoading: boolean;
+        error: string | null;
+    },
+    language: {
+        data: PercentageItem[] | null;
+        isLoading: boolean;
+        error: string | null;
+    },
+    skill: {
+        data: PercentageItem[] | null;
         isLoading: boolean;
         error: string | null;
     }
