@@ -1,11 +1,9 @@
-<!-- check if is possible to give custom height -->
-<!-- reformat to add just icons -->
-
 <div 
     [style.width]="width()" 
     [style.height]="height()" 
     [style.background]="bg()"
     [style.min-width]="minWidth()"
+    [style.border]="border()"
     class="flex flex-col rounded-xl p-6 min-w-[22rem]"
 >
     @if (cardType() === 'normal') {

@@ -15,6 +15,7 @@ export class SoftSkillsComponent implements OnInit {
   width = 'calc(50% - 10px)';
   height = '10rem';
   bg = 'linear-gradient(to bottom right, hsl(240,1%,20%) 3%, hsl(0,0%,15%) 97%)';
+  border = '1px solid #404040';
 
   softSillsStore = inject(softSkillsStore)
 

@@ -13,6 +13,7 @@ export class CardComponent {
   width    = input.required();
   height   = input.required();
   bg       = input.required();
+  border   = input();
   minWidth = input('22rem');
   cardType = input<'normal' | 'icon' | 'percentage'>('normal')
   imgUrl   = input('')

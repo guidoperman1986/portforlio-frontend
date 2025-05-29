@@ -2,7 +2,7 @@
 
 <div class="flex flex-col mt-5 p-5">
     <p class="text-white text-justify">
-        {{ resume }}
+        {{ resume?.content }}
     </p>
 
     <div class="mt-10">
@@ -11,14 +11,11 @@
         <app-what-i-do></app-what-i-do>
     </div>
 
-    <!-- Soft Skills Section -->
     <div class="mt-16 max-w-4xl">
-        <!-- TODO: This section should be filled with soft skills brought from backend -->
         <app-soft-skills></app-soft-skills>
     </div>
 
     <div class="mt-16 max-w-4xl">
-        <!-- TODO: This section should be filled with tech experience brought from backend -->
         <app-tech-experience></app-tech-experience>
     </div>
 
