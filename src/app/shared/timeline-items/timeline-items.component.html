@@ -2,7 +2,7 @@
 @let timelineItems = timelineDetails().items;
 @let last = false;
 
-<h1 class="text-white text-2xl font-bold mb-5">{{timelineTitle}}</h1>
+<h1 class="text-white text-2xl font-semibold mb-5">{{timelineTitle}}</h1>
 
 <div class="timeline" [class.last-item]="last">
     @for (item of timelineItems; track item.name;) {
